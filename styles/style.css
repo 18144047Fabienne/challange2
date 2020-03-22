@@ -18,9 +18,11 @@ body {
 }
 article {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 .logo {
+
 	margin: 30px;
 	width: 200px;
 	height: 80px;
