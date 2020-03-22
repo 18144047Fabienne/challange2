@@ -1,13 +1,25 @@
 body {
-	background-color: #000;
+	background-color: #0E0E1F;
 }
 .klok {
 	position: absolute;
+	font-family: 'Roboto Mono', monospace;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	color: #fff;
+	color: #00FFFF;
 	font-size: 30px;
-	border: 1px solid #ccc;
-	padding: 0px 5px 0px 5px;
+	text-align: center;
+	line-height: 40px;
+	border: 3px solid #00FFFF;
+	padding: 20px 25px 20px 25px;
+	 text-shadow:1px 1px 25px #fff, 1px 1px 25px #00FFFF;
+
 }
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*background*/

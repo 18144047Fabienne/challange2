@@ -6,10 +6,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="styles/style.css" type="text/css">
-	</head>
-	<body>
-		<di id="MyClockDisplay" class="klok"></div>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Code+Pro&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Contrail+One|Roboto+Mono|Source+Code+Pro&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Contrail+One|Roboto+Mono|Source+Code+Pro|Tomorrow&display=swap" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript">
+			function myDate(){
+			var mydate=new Date();
+			var day=mydate.getDay();
+			var month=mydate.getMonth();
+			var year=mydate.getYear();
+			var d=mydate.getDate();
+			if (year<1000)
+				year+=1900;
+			if(d<10)
+				d="0"+d;
+				var darr=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+				var marr=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+				document.write(""+darr[day]+", "+marr[month]+", "+d+", "+year+"");
+			}
+			</script>
+			<script type="text/javascript">
+
 			function showTime(){
 				var date = new Date();
 				var h = date.getHours(); //return 0-23
@@ -30,15 +49,52 @@
 				m = (m < 10) ? "0" + m : m;
 				s = (s < 10) ? "0" + s : s;
 
-				var time = h + ":" + m + ":" + s + " " + session;
-				document.getElementById("MyClockDisplay").innterText = time;
+				 switch (new Date().getDay()) { // case switch van welke dag het is
+			        case 0:
+			            dag = "Zondag";
+			            break;
+			        case 1:
+			            dag = "Maandag";
+			            break;
+			        case 2:
+			            dag = "Dinsdag";
+			            break;
+			        case 3:
+			            dag = "Woensdag";
+			            break;
+			        case 4:
+			            dag = "Donderdag";
+			            break;
+			        case 5:
+			            dag = "Vrijdag";
+			            break;
+			        case 6:
+			            dag = "Zaterdag";
+			            break;
+			        default:
+			            dag = "Tijd:";
+			            break;
+			    }
+
+				var time = dag + " " + h + ":" + m + ":" + s + " " + session;
+				document.getElementById("MyClockDisplay").innerText = time;
 				document.getElementById("MyClockDisplay").textContent = time;
 
 				setTimeout(showTime, 1000);
 			}
 
-			showTime();
-
 		</script>
+	</head>
+	<body>
+		<article>
+			blabla
+		</article>
+		<article class="container">
+			<div id="MyClockDisplay" class="klok"></div>
+			<script type="text/javascript">showTime();</script>
+		</article>
+		<article>
+			blabla
+		</article>
 	</body>
 </html>
