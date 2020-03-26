@@ -5,27 +5,11 @@
 		<title>challenge2</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="styles/style.css" type="text/css">
+		<link rel="stylesheet" href="style.css" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Code+Pro&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Contrail+One|Roboto+Mono|Source+Code+Pro&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Contrail+One|Roboto+Mono|Source+Code+Pro|Tomorrow&display=swap" rel="stylesheet">
-		<script type="text/javascript">
-			function myDate(){
-			var mydate=new Date();
-			var day=mydate.getDay();
-			var month=mydate.getMonth();
-			var year=mydate.getYear();
-			var d=mydate.getDate();
-			if (year<1000)
-				year+=1900;
-			if(d<10)
-				d="0"+d;
-				var darr=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-				var marr=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-				document.write(""+darr[day]+", "+marr[month]+", "+d+", "+year+"");
-			}
-			</script>
 			<script type="text/javascript">
 
 			function showTime(){
@@ -34,21 +18,23 @@
 				var m = date.getMinutes(); //return 0 - 59
 				var s = date.getSeconds(); //return 0 - 59
 				var session = "AM";
-
+				
 				if(h == 0){
 					h = 12;
+					document.body.style.backgroundImage = "url('daytime.png')";
 				}
-
+				
 				if(h > 12){
 					h = h - 12;
 					session = "PM";
+					document.body.style.backgroundImage = "url('night.png')";
 				}
 
 				h = (h < 10) ? "0" + h : h;
 				m = (m < 10) ? "0" + m : m;
 				s = (s < 10) ? "0" + s : s;
 
-				 switch (new Date().getDay()) { // case switch van welke dag het is
+				 switch (new Date().getDay()) { 
 			        case 0:
 			            dag = "Zondag";
 			            break;
@@ -85,16 +71,17 @@
 		</script>
 	</head>
 	<body>
+
 		<section>
 			<article>
-				<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
+				<figure><img src="logo.png" alt="logo" class="logo"></figure>
 			</article>
-			<article class="container">
+			<article class="container" class="text-shadow-drop-center">
 				<div id="MyClockDisplay" class="klok"></div>
 				<script type="text/javascript">showTime();</script>
 			</article>
 			<article>
-				<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
+				<!--<figure><img src="logo.png" alt="logo" class="logo"></figure>-->
 			</article>
 		</section>
 	</body>
