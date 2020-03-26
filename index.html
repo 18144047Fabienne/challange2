@@ -14,20 +14,20 @@
 
 			function showTime(){
 				var date = new Date();
-				var h = date.getHours(); //return 0-23
+				var h = 10; //return 0-23
 				var m = date.getMinutes(); //return 0 - 59
 				var s = date.getSeconds(); //return 0 - 59
 				var session = "AM";
 				
-				if(h == 0){
+				if(h < 12 ){
 					h = 12;
 					document.body.style.backgroundImage = "url('daytime.png')";
 				}
 				
-				if(h > 12){
+				if (h > 12){
 					h = h - 12;
 					session = "PM";
-					document.body.style.backgroundImage = "url('night.png')";
+					document.body.style.backgroundImage = "url('night-mobile.png')";
 				}
 
 				h = (h < 10) ? "0" + h : h;
